@@ -28,7 +28,7 @@ jobs:
       - name: Install Pipeline Package
         shell: pwsh
         run: |
-          git clone https://x-token-auth:${{ secrets.STARTER_MODELS_PIPELINE_TOKEN }}@bitbucket.org/imagimob/starter-projects-pipeline.git
+          git clone https://x-token-auth:${{ secrets.STARTER_PROJECTS_PIPELINE_TOKEN }}@bitbucket.org/imagimob/starter-projects-pipeline.git
           pip install -e starter-projects-pipeline
 
       - name: Update projects
@@ -36,7 +36,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SENSOR_MAP: ${{ vars.SENSOR_MAP }}
-          STARTER_MODELS_PIPELINE_TOKEN: ${{ secrets.STARTER_MODELS_PIPELINE_TOKEN }}
+          STARTER_PROJECTS_PIPELINE_TOKEN: ${{ secrets.STARTER_PROJECTS_PIPELINE_TOKEN }}
         run: |
           if ("${{ github.event.action }}" -eq "main_update_all") {
             update-all
