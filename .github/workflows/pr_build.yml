@@ -45,6 +45,7 @@ jobs:
         run: |
           git clone https://x-token-auth:${{ secrets.STARTER_PROJECTS_PIPELINE_TOKEN }}@bitbucket.org/imagimob/starter-projects-pipeline.git
           pip install -e starter-projects-pipeline
+          pip install -e ".[hdf5]"
 
       - name: Build changed projects
         shell: pwsh
