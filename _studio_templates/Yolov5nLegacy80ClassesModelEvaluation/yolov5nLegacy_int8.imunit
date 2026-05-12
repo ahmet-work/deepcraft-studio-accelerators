@@ -3,9 +3,9 @@
   <Compound unit="7fdde859-245f-415d-9b55-2aa8768f8908">
     <Nodes>
       <UnitNode id="node_3" x="-168.1977423677856" y="428.85317917636326" enabled="true" profiling="false" name="Local Camera Video" unit="ImagimobStudio.Modules.LiveVideoTrack" />
-      <UnitNode id="node_5" x="378.82833333333383" y="232.10500000000002" enabled="true" profiling="false" name="yolov5nLegacy-int8.imunit TFLite Model" unit="Imaginet.Units.TensorFlowLite.TfLiteModel">
+      <UnitNode id="node_5" x="378.82833333333383" y="232.10500000000002" enabled="true" profiling="false" name="yolov5nLegacy_int8.imunit TFLite Model" unit="Imaginet.Units.TensorFlowLite.TfLiteModel">
         <Int32Argument param="model_arena_size">10000</Int32Argument>
-        <StringArgument param="file_path">Model/yolov5nLegacy-int8.tflite</StringArgument>
+        <StringArgument param="file_path">Model/yolov5nLegacy_int8.tflite</StringArgument>
       </UnitNode>
       <UnitNode id="node_7" x="-168.07457608826417" y="241.89664626151972" enabled="true" profiling="false" unit="Imaginet.Units.Math.Cast">
         <StringArgument param="output_type">int8</StringArgument>

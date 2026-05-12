@@ -9,7 +9,7 @@
 - **Task**: Object Detection
 - **Dataset**: COCO (Common Objects in Context)
 - **Number of Classes**: 80
-- **Input Resolution**: 224×224 pixels
+- **Input Resolution**: 192x192 pixels
 - **Quantization**: INT8
 
 ## Folder Contents
@@ -27,7 +27,7 @@
 The `.imunit` graph implements the following pipeline:
 
 ```
-Camera (640×360 @ 15fps) → Resize (224×224) → Cast (int8) → YOLOv5n TFLite → Dequantize (float32) → Select BBox + Classes → Detection Filter (threshold: 0.3) → Labels → Bounding Box Visualization
+Camera (640×360 @ 15fps) → Resize (192x192) → Cast (int8) → YOLOv5n TFLite → Dequantize (float32) → Select BBox + Classes → Detection Filter (threshold: 0.3) → Labels → Bounding Box Visualization
 ```
 
 ## COCO 80 Classes
@@ -59,11 +59,10 @@ This model detects the following 80 object classes:
 
 ## How to Use
 
-1. Open `yolov5n_int8.improjv` in Imagimob Studio.
-2. Open `yolov5n_int8.imunit` from the Solution Explorer.
-3. Click the **Start** button (play symbol).
-4. Click the **Record** button to begin live evaluation.
-5. Observe bounding box detections on the camera feed.
+1. Open `yolov5n_int8.imunit` from the Solution Explorer.
+2. Click the **Start** button (play symbol).
+3. Click the **Record** button to begin live evaluation.
+4. Observe bounding box detections on the camera feed.
 
 ## Example: Adding New Classes for Detection
 
@@ -111,7 +110,7 @@ The model output tensor contains **84 values per detection** (4 bounding box coo
 
 4. **Add the new class(es) to the Concat chain:**
    - The existing graph concatenates person and car scores using a Concat node.
-   - Add a **new Concat node** that takes the existing person+car Concat output as `i0` and the new Select node output as `i1`.
+   - Add a **new Concat node** that takes the existing person+car Concat output as `Input 0` and the new Select node output as `Input 1`.
 
 5. **Update the Labels node** to include the new class names. Change the `axis_labels` parameter:
 
@@ -121,16 +120,15 @@ The model output tensor contains **84 values per detection** (4 bounding box coo
    ```
    to:
    ```
-   {,,,,,},{x,y,w,h,person,car,dog}
+   {,,,,},{x,y,w,h,person,car,dog}
    ```
 
    For the consecutive cat+dog+horse group, change to:
    ```
-   {,,,,,,,},{x,y,w,h,person,car,cat,dog,horse}
+   {,,,,},{x,y,w,h,person,car,cat,dog,horse}
    ```
-
-   The first group must contain one comma per output value minus one. The second group lists all value names in order.
-
+   The class names should be in same order with their id numbers.
+   
 6. **Run the evaluation** — you should now see bounding boxes with the new labels in addition to "person" and "car".
 
 ### When to Use `count` > 1

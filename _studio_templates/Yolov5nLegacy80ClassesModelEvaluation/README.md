@@ -9,7 +9,7 @@
 - **Task**: Object Detection
 - **Dataset**: COCO (Common Objects in Context)
 - **Number of Classes**: 80
-- **Input Resolution**: 320×320 pixels
+- **Input Resolution**: 256x256 pixels
 - **Quantization**: INT8
 
 ## Folder Contents
@@ -27,7 +27,7 @@
 The `.imunit` graph implements the following pipeline:
 
 ```
-Camera (1280×720 @ 30fps) → Resize (320×320) → Cast (int8) → YOLOv5n Legacy TFLite → Dequantize (float32) → Select BBox + Classes → Detection Filter (threshold: 0.3) → Labels → Bounding Box Visualization
+Camera (1280×720 @ 30fps) → Resize (256x256) → Cast (int8) → YOLOv5n Legacy TFLite → Dequantize (float32) → Select BBox + Classes → Detection Filter (threshold: 0.3) → Labels → Bounding Box Visualization
 ```
 
 **Note:** This legacy model uses a transposed output layout compared to the updated YOLOv5nu and newer YOLO versions. The selection and concatenation operations operate along axis 0 instead of axis 1. The bounding box coordinate selection also includes 5 values (x, y, w, h, objectness) instead of 4.
@@ -61,11 +61,10 @@ This model detects the following 80 object classes:
 
 ## How to Use
 
-1. Open `yolov5nLegacy-int8.improjv` in Imagimob Studio.
-2. Open `yolov5nLegacy-int8.imunit` from the Solution Explorer.
-3. Click the **Start** button (play symbol).
-4. Click the **Record** button to begin live evaluation.
-5. Observe bounding box detections on the camera feed.
+1. Open `yolov5nLegacy-int8.imunit` from the Solution Explorer.
+2. Click the **Start** button (play symbol).
+3. Click the **Record** button to begin live evaluation.
+4. Observe bounding box detections on the camera feed.
 
 ## Example: Adding New Classes for Detection
 
@@ -116,7 +115,7 @@ The legacy YOLOv5 model uses a **transposed output layout** compared to newer YO
 
 4. **Add the new class(es) to the Concat chain:**
    - The existing graph concatenates person and car scores using a Concat node.
-   - Add a **new Concat node** (with `axis: 0`) that takes the existing person+car Concat output as `i0` and the new Select node output as `i1`.
+   - Add a **new Concat node** (with `axis: 0`) that takes the existing person+car Concat output as `Input 0` and the new Select node output as `Input 1`.
 
 5. **Update the Labels node** to include the new class names. Change the `axis_labels` parameter:
 
@@ -126,16 +125,15 @@ The legacy YOLOv5 model uses a **transposed output layout** compared to newer YO
    ```
    to:
    ```
-   {,,,,,},{x,y,w,h,person,car,dog}
+   {,,,,},{x,y,w,h,person,car,dog}
    ```
 
    For the consecutive cat+dog+horse group, change to:
    ```
-   {,,,,,,,},{x,y,w,h,person,car,cat,dog,horse}
+   {,,,,},{x,y,w,h,person,car,cat,dog,horse}
    ```
-
-   The first group must contain one comma per output value minus one. The second group lists all value names in order.
-
+   The class names should be in same order with their id numbers.
+   
 6. **Run the evaluation** — you should now see bounding boxes with the new labels in addition to "person" and "car".
 
 ### When to Use `count` > 1
