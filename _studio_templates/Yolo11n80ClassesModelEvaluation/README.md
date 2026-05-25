@@ -145,6 +145,7 @@ Using `count` > 1 for consecutive classes keeps the graph simpler and avoids unn
 
 ### Quick Reference for Common Classes
 
+
 | Class | COCO ID | Output Index |
 |-------|---------|--------------|
 | person | 0 | 4 |
@@ -160,4 +161,3 @@ Using `count` > 1 for consecutive classes keeps the graph simpler and avoids unn
 | chair | 56 | 60 |
 | tv | 62 | 66 |
 | laptop | 63 | 67 |
-| cell phone | 67 | 71 |

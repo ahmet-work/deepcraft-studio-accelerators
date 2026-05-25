@@ -165,4 +165,3 @@ Using `count` > 1 for consecutive classes keeps the graph simpler and avoids unn
 | chair | 56 | 61 |
 | tv | 62 | 67 |
 | laptop | 63 | 68 |
-| cell phone | 67 | 72 |
