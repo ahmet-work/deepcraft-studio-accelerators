@@ -14,6 +14,10 @@
         <PayloadFile>..\..\..\yolov5n-size320-batch64-epoch10\Predictions\sessions\ice_57\ice_57.labelxml</PayloadFile>
         <Shape />
       </Track>
+      <Track name="yolov8n-size160-batch64-epoch20_predictions_val" type="labelxml">
+        <PayloadFile>..\..\..\Models\yolov8n-size160-batch64-epoch20\yolov8n-size160-batch64-epoch20_predictions_val\sessions\ice_57\ice_57.labelxml</PayloadFile>
+        <Shape />
+      </Track>
     </Tracks>
   </Timeline>
 </ImagimobStudio>

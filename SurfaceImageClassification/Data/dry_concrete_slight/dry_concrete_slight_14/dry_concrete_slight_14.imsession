@@ -14,6 +14,10 @@
         <PayloadFile>..\..\..\yolov5n-size320-batch64-epoch10\Predictions\sessions\dry_concrete_slight_14\dry_concrete_slight_14.labelxml</PayloadFile>
         <Shape />
       </Track>
+      <Track name="yolov8n-size160-batch64-epoch20_predictions_train" type="labelxml">
+        <PayloadFile>..\..\..\Models\yolov8n-size160-batch64-epoch20\yolov8n-size160-batch64-epoch20_predictions_train\sessions\dry_concrete_slight_14\dry_concrete_slight_14.labelxml</PayloadFile>
+        <Shape />
+      </Track>
     </Tracks>
   </Timeline>
 </ImagimobStudio>
