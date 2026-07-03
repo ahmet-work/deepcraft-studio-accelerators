@@ -24,7 +24,7 @@ Users can further expand this project by training their own models, importing ne
 
 2.	Custom Data Integration: Users can add new data through the data import or using Image Classification Data Collection Graph UX template and label their own data for model training.
 
-3.	Model Evaluation: Evaluate trained models by providing .tflite file and when you double click, it will automatically generate a graph UX project for evaluate in real time.
+3.	Model Evaluation: Evaluate trained models by providing .tflite file and when you double click, it will automatically generate a graph UX project for real time evaluation.
 
 ## Contents
 
@@ -32,9 +32,6 @@ Users can further expand this project by training their own models, importing ne
 
 •	Models: Stores the trained image classification model and its quantized versions, prepared for deployment.
 																												   
-•	Input a trained .tflite model.
-
-•	Visualize and analyze the performance of the model.
 
 ## Steps to get started: Model Training and Evaluation
 
@@ -42,7 +39,7 @@ Users can further expand this project by training their own models, importing ne
 
 2.	Download the trained model .tflite file from trained job.
 
-3.	Add downloaded tflite model path in the Model Evaluation Image Classification Graph UX in the Tools folder.
+3.	Double click the downloaded model and it will create a Graph UX project to evaluate model.
 
 4.	Run the Graph UX project to evaluate model performance in real time using selected camera.
 
