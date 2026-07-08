@@ -41,9 +41,10 @@
       <Training/>
       <ConfusionMatrix/>
     </BuildSteps>
+    <IsNasEnabled>False</IsNasEnabled>
   </ModelFactory>
   <Models>
-    <Model name="conv1dlstm-medium-accuracy-0" id="a514d1b9-d0d1-4db5-aac1-6f60920f53ca">
+    <Model name="conv1dlstm-medium-accuracy-0" id="35fbd4c5-10d2-4bfd-ae33-97cd213ffbc8">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
@@ -179,7 +180,7 @@
         <ConfusionMatrix/>
       </BuildSteps>
       <SymbolWeights override="False">
-        <SymbolWeight symbol="(unlabeled)" weight="1"/>
+        <SymbolWeight symbol="unlabeled" weight="1"/>
         <SymbolWeight symbol="Air" weight="4"/>
         <SymbolWeight symbol="Plastic" weight="7"/>
         <SymbolWeight symbol="Wood" weight="9"/>
@@ -197,7 +198,7 @@
       </Preprocessor>
       <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32"/>
     </Model>
-    <Model name="conv1dlstm-medium-accuracy-1" id="4770815d-4b2c-4950-a860-4064301146c4">
+    <Model name="conv1dlstm-medium-accuracy-1" id="0e0ecaed-75d4-40f4-a8ee-d54188c3fa90">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
@@ -333,7 +334,7 @@
         <ConfusionMatrix/>
       </BuildSteps>
       <SymbolWeights override="False">
-        <SymbolWeight symbol="(unlabeled)" weight="1"/>
+        <SymbolWeight symbol="unlabeled" weight="1"/>
         <SymbolWeight symbol="Air" weight="4"/>
         <SymbolWeight symbol="Plastic" weight="7"/>
         <SymbolWeight symbol="Wood" weight="9"/>
@@ -351,7 +352,7 @@
       </Preprocessor>
       <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32"/>
     </Model>
-    <Model name="conv1dlstm-medium-accuracy-2" id="da8a6215-3a91-4ded-85d3-308042f8af9e">
+    <Model name="conv1dlstm-medium-accuracy-2" id="c0e24a07-3f94-4c6e-a860-be4ce7ecef26">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
@@ -487,7 +488,7 @@
         <ConfusionMatrix/>
       </BuildSteps>
       <SymbolWeights override="False">
-        <SymbolWeight symbol="(unlabeled)" weight="1"/>
+        <SymbolWeight symbol="unlabeled" weight="1"/>
         <SymbolWeight symbol="Air" weight="4"/>
         <SymbolWeight symbol="Plastic" weight="7"/>
         <SymbolWeight symbol="Wood" weight="9"/>
@@ -505,7 +506,7 @@
       </Preprocessor>
       <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32"/>
     </Model>
-    <Model name="conv1dlstm-medium-accuracy-3" id="903206cc-cbb8-42f5-868b-9ae5ce742dd7">
+    <Model name="conv1dlstm-medium-accuracy-3" id="a90f1b45-22f0-49d2-a4ee-1f1956dd3987">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
@@ -641,7 +642,7 @@
         <ConfusionMatrix/>
       </BuildSteps>
       <SymbolWeights override="False">
-        <SymbolWeight symbol="(unlabeled)" weight="1"/>
+        <SymbolWeight symbol="unlabeled" weight="1"/>
         <SymbolWeight symbol="Air" weight="4"/>
         <SymbolWeight symbol="Plastic" weight="7"/>
         <SymbolWeight symbol="Wood" weight="9"/>
@@ -662,7 +663,7 @@
   </Models>
   <Database balance="AnnotatedLength" redistributionScope="Everything">
     <SymbolMap>
-      <Symbol name="(unlabeled)" id="0" weight="1"/>
+      <Symbol name="unlabeled" id="0" weight="1"/>
       <Symbol name="Air" id="1" weight="4"/>
       <Symbol name="Plastic" id="2" weight="7"/>
       <Symbol name="Wood" id="3" weight="9"/>
