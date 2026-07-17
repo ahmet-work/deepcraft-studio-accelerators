@@ -56,7 +56,7 @@
     <IsNasEnabled>False</IsNasEnabled>
   </ModelFactory>
   <Models>
-    <Model name="dense-medium-accuracy-0" id="26db582d-dfc8-4631-9b09-288d35c423e3">
+    <Model name="dense-medium-accuracy-0" id="2b3094f3-24e3-436f-8de3-fb33b0db055e">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
@@ -152,7 +152,7 @@
       </Preprocessor>
       <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32"/>
     </Model>
-    <Model name="dense-medium-accuracy-1" id="cd3f339f-e7d3-447f-a8d0-0ea06318c1bb">
+    <Model name="dense-medium-accuracy-1" id="849b13f4-baa9-4742-9320-7192352b561b">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
@@ -248,7 +248,7 @@
       </Preprocessor>
       <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32"/>
     </Model>
-    <Model name="dense-medium-accuracy-2" id="5fa3a521-90ea-4f82-a9e5-c25cc6af01b9">
+    <Model name="dense-medium-accuracy-2" id="83ccfe54-8342-4e1d-a873-1c395c53a265">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
@@ -344,7 +344,7 @@
       </Preprocessor>
       <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32"/>
     </Model>
-    <Model name="dense-medium-accuracy-3" id="b9dbb504-a1b2-4816-bd56-0450d21e55d6">
+    <Model name="dense-medium-accuracy-3" id="d4d53fb5-01ca-4b1f-88af-2da44693f814">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>16</BatchSize>
