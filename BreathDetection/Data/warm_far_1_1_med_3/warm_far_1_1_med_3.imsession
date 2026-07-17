@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ImagimobStudio version="0.9">
+  <Timeline id="40257d5a-2a3c-45cb-8df3-e54ea7f7d5c4">
+    <Tracks>
+      <Track name="DPS-Data" type="datacsv" isLabelTrack="False">
+        <PayloadFile>DPS-Data.data</PayloadFile>
+        <Shape />
+      </Track>
+      <Track name="Live-Labeling" type="labelcsv">
+        <PayloadFile>Live-Labeling.label</PayloadFile>
+        <Shape />
+      </Track>
+      <Track name="Preprocessor" type="datacsv" timecoded="TimestampBeginDuration" isLabelTrack="False">
+        <PayloadFile>..\..\PreprocessorTrack\warm_far_1_1_med_3\DPS-Data_Preprocessor.data</PayloadFile>
+        <Shape />
+      </Track>
+      <Track name="dense-medium-accuracy-00" type="datacsv" timecoded="TimestampBeginDuration" isLabelTrack="False">
+        <PayloadFile>..\..\Models\dense-medium-accuracy-0\predictions\sessions\warm_far_1_1_med_3\predictions_dense-medium-accuracy-0\dense-medium-accuracy-00.data</PayloadFile>
+        <Offset unit="seconds">1.4843750000E+000</Offset>
+        <Shape />
+      </Track>
+    </Tracks>
+  </Timeline>
+</ImagimobStudio>
